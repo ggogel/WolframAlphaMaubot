@@ -13,3 +13,4 @@ Enter your AppID in the base-config.yaml. You can also change the base-config.ya
 ```
 The bot will reply with an image containing the search result.
 
+![sample](https://i.imgur.com/HbJH9i7.png)
