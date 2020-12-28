@@ -30,6 +30,9 @@ class WolframAlphaPlugin(Plugin):
         url_params = urllib.parse.urlencode({"i": search_term, "appid": appid})
         gif_link =  "https://api.wolframalpha.com/v1/simple?{}".format(url_params)
         resp = await self.http.get(gif_link)
+        if resp.status == 501:
+            await evt.reply("WolframAlpha doesn't understand your query")
+            return None
         if resp.status != 200:
             self.log.warning(f"Unexpected status fetching image {gif_link}: {resp.status}")
             return None
