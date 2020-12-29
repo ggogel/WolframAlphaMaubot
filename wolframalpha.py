@@ -8,9 +8,6 @@ from maubot.handlers import command
 class Config(BaseProxyConfig):
     def do_update(self, helper: ConfigUpdateHelper) -> None:
         helper.copy("appid")
-        helper.copy("source")
-        helper.copy("response_type")
-
 
 class WolframAlphaPlugin(Plugin):
     async def start(self) -> None:
